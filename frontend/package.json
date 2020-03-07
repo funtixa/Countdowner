@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "html-react-parser": "^0.10.1",
     "react-date-countdown-timer": "^1.0.4",
     "react-scripts": "^3.4.0",
     "webpack": "^4.42.0",

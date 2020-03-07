@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('leads.urls')),
     path('', include('frontend.urls')),
-    path('tinymce/', include('tinymce.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]

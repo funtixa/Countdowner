@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import DateCountdown from "react-date-countdown-timer";
+// import DOMPurify from 'dompurify'
+import parse from 'html-react-parser';
+
 
 class App extends Component {
   constructor(props) {
@@ -34,18 +37,15 @@ class App extends Component {
 
   render() {
     return (
-      <ul>
+      <div className="container_field">
         {this.state.data.map(contact => {
           return (
-            <div className="App">
-
-
+            <div className="App" >
               <div key={contact.id}>
-                <h1>{contact.company}</h1>
-                <h4>{contact.title}</h4>
-                <p>{contact.overview}</p>
-                <p>{contact.event_date}</p>
-                
+                <h1 className="company_header">{contact.company}</h1>
+                <h4 className="company_title">{contact.title}</h4>
+                <p className="overview_field">{contact.overview}</p>
+                <iframe width="300" height="200" src={contact.video_link}/>
               </div>
               <div className="timer">
                 <DateCountdown
@@ -56,7 +56,7 @@ class App extends Component {
             </div>
           );
         })}
-      </ul>
+      </div>
     );
   }
 }
