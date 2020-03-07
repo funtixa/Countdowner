@@ -45,12 +45,21 @@ class App extends Component {
                 <h1 className="company_header">{contact.company}</h1>
                 <h4 className="company_title">{contact.title}</h4>
                 <p className="overview_field">{contact.overview}</p>
-                <iframe width="300" height="200" src={contact.video_link}/>
+                <iframe width="560" height="315" src={contact.video_link} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
+{/* ## Properties
+* dateTo(string)(required): target date to countdown
+* callback(function): function to run after the countdown is completed (default null)
+* mostSignificantFigure(string): most significant figure to show about the remaining time (default 'none')
+* numberOfFigures(number): number of figures to show from mostSignificantFigure (default 6)
+* locales(array(string)): locales strings for units (default ['year','month','day','hour','minute','second'])
+* locales_plural(array(string)): locales strings for units' plural form (default ['years','months','days','hours','minutes','seconds']) */}
               <div className="timer">
                 <DateCountdown
+                  mostSignificantFigure={contact.mostSignificantFigure}
+                  numberOfFigures={contact.numberOfFigures}
                   dateTo={contact.event_date}
-                  callback={() => alert("Expired")}
+                  callback={() => console.log("Expired")}
                 />
               </div>
             </div>
